@@ -26,4 +26,6 @@ RUN apt-get update -q && apt-get install -q -y libatomic1
 COPY --from=ovs_builder /tarball /
 RUN mkdir -p /usr/local/var/run/openvswitch
 RUN ovsdb-tool create /usr/local/etc/openvswitch/ovnnb_db.db /usr/local/share/openvswitch/ovn-nb.ovsschema
+RUN ovsdb-tool create /usr/local/etc/openvswitch/ovnsb_db.db /usr/local/share/openvswitch/ovn-sb.ovsschema
+RUN ovsdb-tool create /usr/local/etc/openvswitch/conf.db /usr/local/share/openvswitch/vswitch.ovsschema
 ENTRYPOINT ["ovsdb-server"]
