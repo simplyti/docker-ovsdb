@@ -9,7 +9,7 @@ RUN apt-get update -q && apt-get install -q -y wget \
 
 RUN pip install six
 
-ENV OPENVSWITCH_VERSION v2.8.1
+ENV OPENVSWITCH_VERSION v2.9.0
 
 RUN git clone https://github.com/openvswitch/ovs.git && \
 	cd ovs && \
